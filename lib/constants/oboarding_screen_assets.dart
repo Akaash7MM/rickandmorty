@@ -1,5 +1,7 @@
 import 'onboarding_data_item.dart';
 
+const logoSource = 'assets/logo_rick_morty.png';
+
 final onboardingAssets = [
   OnboardingDataItem(
       id: 1,

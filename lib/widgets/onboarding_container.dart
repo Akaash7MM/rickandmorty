@@ -9,17 +9,13 @@ class OnboardingContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final onboardingItem = onboardingAssets[screenNumber-1];
+    final onboardingItem = onboardingAssets[screenNumber];
     return Container(
       width: MediaQuery.of(context).size.width,
       child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-              child: Image.asset(onboardingItem.logoSource),
-            ),
             Image.asset(onboardingItem.getImageSource),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
