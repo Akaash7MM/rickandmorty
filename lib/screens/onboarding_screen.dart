@@ -22,20 +22,38 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _navigateToAuthScreen() {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const AuthScreen()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const AuthScreen()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: OnboardingContainer(
-        screenNumber: screenNumber,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          OnboardingContainer(
+            screenNumber: screenNumber,
+          ),
+          TextButton(
+              onPressed: _navigateToAuthScreen,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+                child: Text(
+                  "Skip",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontSize: 18),
+                ),
+              ))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () =>
-        screenNumber < totalScreenCount
+        onPressed: () => screenNumber < totalScreenCount
             ? _incrementScreenNumber()
             : _navigateToAuthScreen(),
         child: Stack(
