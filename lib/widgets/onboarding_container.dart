@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/constants/oboarding_screen_assets.dart';
 
